@@ -1,0 +1,189 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger API documentation for FeedService",
+    "version" : "2.0",
+    "title" : "FeedServiceService Swagger Documentation",
+    "x-WM-SERVICE_TYPE" : "FeedService",
+    "x-WM-SERVICE_ID" : "FeedService"
+  },
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "FeedServiceController",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.feed.controller.FeedServiceController",
+    "x-WM-VERSION" : ""
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/feed/" : {
+      "get" : {
+        "tags" : [ "FeedServiceController" ],
+        "description" : "Reads from the InputStream of the specified URL and builds the feed object from the returned XML.",
+        "operationId" : "getFeed",
+        "parameters" : [ {
+          "name" : "feedURL",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "67adec93-0952-4819-8331-1b645b8ff8b6",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Feed",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "f4682fff-ffd0-4d79-879d-b13e5609df7c",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getFeed-1-1195260122"
+      },
+      "x-WM-TAG" : "FeedServiceController",
+      "x-WM-BASE_PATH" : "/feed",
+      "x-WM-COMPLETE_PATH" : "//feed/",
+      "x-WM-RELATIVE_PATH" : ""
+    },
+    "/feed/auth" : {
+      "get" : {
+        "tags" : [ "FeedServiceController" ],
+        "description" : "Reads from the InputStream of the specified URL & http auth and builds the feed object from the returned XML.",
+        "operationId" : "getFeedWithHttpConfig",
+        "parameters" : [ {
+          "name" : "feedURL",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "6572c42e-8cb1-40b8-8935-b797f5ef8866",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "httpBasicAuthUsername",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "cbc15331-84a2-4f6b-b03b-1f133799901d",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "httpBasicAuthPassword",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "21913c37-4c7a-4986-aea0-bceb11ca05a4",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "connectionTimeout",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "06d7acc7-191a-4502-93ee-e55208900918",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Feed",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "6f579991-5d8e-4942-8f24-9c6bbaf59419",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getFeedWithHttpConfig-4--1440273193"
+      },
+      "x-WM-TAG" : "FeedServiceController",
+      "x-WM-BASE_PATH" : "/feed",
+      "x-WM-COMPLETE_PATH" : "//feed/auth",
+      "x-WM-RELATIVE_PATH" : "/auth"
+    }
+  },
+  "definitions" : {
+    "Entry" : {
+      "properties" : {
+        "title" : {
+          "type" : "string"
+        },
+        "author" : {
+          "type" : "string"
+        },
+        "updatedDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "link" : {
+          "type" : "string"
+        },
+        "publishedDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "uri" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.feed.model.Entry",
+      "x-WM-TAGS" : [ "FeedServiceController" ]
+    },
+    "Feed" : {
+      "properties" : {
+        "uri" : {
+          "type" : "string"
+        },
+        "publishedDate" : {
+          "type" : "string",
+          "format" : "date"
+        },
+        "language" : {
+          "type" : "string"
+        },
+        "copyright" : {
+          "type" : "string"
+        },
+        "entries" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/Entry",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        },
+        "encoding" : {
+          "type" : "string"
+        },
+        "link" : {
+          "type" : "string"
+        },
+        "feedType" : {
+          "type" : "string"
+        },
+        "description" : {
+          "type" : "string"
+        },
+        "title" : {
+          "type" : "string"
+        },
+        "author" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.feed.model.Feed",
+      "x-WM-TAGS" : [ "FeedServiceController" ]
+    }
+  }
+}

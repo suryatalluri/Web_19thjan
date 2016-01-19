@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="googleapis" type="RestService" springFile="googleapis.spring.xml">
+    <operation name="invoke">
+        <parameter name="sensor" typeRef="java.lang.String" isList="false"/>
+        <parameter name="origin" typeRef="java.lang.String" isList="false"/>
+        <return typeRef="googleapis.DirectionsResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="googleapis.DirectionsResponse" name="DirectionsResponse" supportsQuickData="false">
+            <element name="status" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="error_message" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

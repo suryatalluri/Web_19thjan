@@ -1,0 +1,58 @@
+{
+  "name" : "Test13uu798",
+  "description" : null,
+  "packageName" : "com.web_19thjan.test13uu798",
+  "draft" : false,
+  "tables" : [ {
+    "name" : "TABLE1",
+    "oldName" : "TABLE1",
+    "entityName" : "Table1",
+    "type" : "TABLE",
+    "schema" : null,
+    "catalog" : "Test13uu798",
+    "columns" : [ {
+      "name" : "ID",
+      "oldName" : "ID",
+      "fieldName" : "id",
+      "sqlType" : "integer",
+      "hibernateType" : "integer",
+      "length" : 255,
+      "precision" : 19,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : true,
+      "primaryKey" : true,
+      "foreignKey" : false,
+      "unique" : true
+    }, {
+      "name" : "COLUMN2",
+      "oldName" : "COLUMN2",
+      "fieldName" : "column2",
+      "sqlType" : "timestamp",
+      "hibernateType" : "timestamp",
+      "length" : 19,
+      "precision" : 19,
+      "nullable" : false,
+      "defaultValue" : null,
+      "generator" : "assigned",
+      "sequenceName" : null,
+      "partOfAnyRelation" : false,
+      "partOfPrimaryKey" : false,
+      "primaryKey" : false,
+      "foreignKey" : false,
+      "unique" : false
+    } ],
+    "primaryKey" : {
+      "name" : "PRIMARY",
+      "virtual" : false,
+      "columns" : [ "ID" ],
+      "composite" : false
+    },
+    "relations" : [ ],
+    "constraints" : [ ],
+    "fullyQualifiedName" : "com.web_19thjan.test13uu798.Table1"
+  } ]
+}

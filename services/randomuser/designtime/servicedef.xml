@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="randomuser" type="RestService" springFile="randomuser.spring.xml">
+    <operation name="invoke">
+        <return typeRef="randomuser.RootResponse" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="randomuser.resultsEntryItem" name="resultsEntryItem" supportsQuickData="false">
+            <element name="user" typeRef="randomuser.user" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="randomuser.name" name="name" supportsQuickData="false">
+            <element name="title" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="last" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="first" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="randomuser.location" name="location" supportsQuickData="false">
+            <element name="zip" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="street" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="state" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="city" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="randomuser.user" name="user" supportsQuickData="false">
+            <element name="phone" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sha256" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="location" typeRef="randomuser.location" isList="false" allowNull="false"/>
+            <element name="cell" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="sha1" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="picture" typeRef="randomuser.picture" isList="false" allowNull="false"/>
+            <element name="username" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="email" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="registered" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="HETU" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="name" typeRef="randomuser.name" isList="false" allowNull="false"/>
+            <element name="dob" typeRef="java.lang.Integer" isList="false" allowNull="false"/>
+            <element name="md5" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="gender" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="salt" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="randomuser.RootResponse" name="RootResponse" supportsQuickData="false">
+            <element name="nationality" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="results" typeRef="randomuser.resultsEntryItem" isList="true" allowNull="false"/>
+            <element name="seed" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="version" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="randomuser.picture" name="picture" supportsQuickData="false">
+            <element name="thumbnail" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="medium" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="large" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

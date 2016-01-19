@@ -5,38 +5,99 @@
 Application.$controller("MainPageController", ["$scope", function ($scope) {
     "use strict";
 
-    /* perform any action on the variables within this block(on-page-load) */
+    /* perform any action with the variables inside this block(on-page-load) */
     $scope.onPageVariablesReady = function () {
         /*
          * variables can be accessed through '$scope.Variables' property here
-         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
-         * $scope.Variables.loggedInUser.getData()
+         * e.g. $scope.Variables.staticVariable1.getData()
          */
     };
-    /* perform any action on widgets within this block */
+    
+    /* perform any action with widgets inside this block */
     $scope.onPageReady = function () {
         /*
          * widgets can be accessed through '$scope.Widgets' property here
-         * e.g. to get value of text widget named 'username' use following script
-         * '$scope.Widgets.username.datavalue'
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
          */
     };
 
 }]);
+
+
+Application.$controller("Table1Grid1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("Table1Liveform1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("Table1Grid2Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("Table1Liveform2Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
 </script>
 <script id="Main.variables.json">
-var _MainPage_Variables_ ={};
+var _MainPage_Variables_ ={ }
 </script>
 <script id="Main.html" type="text/ng-template">
-<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
-    <wm-header content="header" name="header" height="auto"></wm-header>
-    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
-    <wm-content name="content">
-        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+<wm-page data-ng-controller="MainPageController" pagetitle="Main" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel columnwidth="2" content="leftnav" name="left_panel1"></wm-left-panel>
+        <wm-page-content columnwidth="10" name="page_content1">
+            <wm-livegrid name="Table1Livegrid2" service="Test13uu798@Table1">
+                <wm-grid deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" name="Table1Grid2" title="Table1" dataset="bind:Variables.Test13uu798Table1Data.dataSet">
+                    <wm-grid-column binding="id" caption="Id" type="integer" primary-key="true" generator="identity" readonly="true" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                    <wm-grid-column binding="column2" caption="Column2" type="timestamp" primary-key="false" generator="assigned" datepattern="dd-MMM-yyyy HH:mm:ss" formatpattern="toDate" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                </wm-grid>
+                <wm-liveform novalidate="false" title="Details" name="Table1Liveform2" dataset="bind:Variables.Test13uu798Table1Data.dataSet" formlayout="inline">
+                    <wm-layoutgrid name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn show="hide" name="gridcolumn1" columnwidth="12">
+                                <wm-form-field name="id" displayname="Id" show="false" primary-key="true" generator="identity" key="id" type="integer" is-related="false" readonly="readonly" required="required" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn show="show" name="gridcolumn2" columnwidth="12">
+                                <wm-form-field name="column2" displayname="Column2" show="true" primary-key="false" generator="assigned" key="column2" type="timestamp" is-related="false" required="required" pc-display="true" mobile-display="true" widget="timestamp"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="glyphicon glyphicon-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livegrid>
+            <wm-accordion name="accordion1">
+                <wm-accordionpane name="accordionpane1">
+                    <wm-accordionheader name="accordionheader1"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent1"></wm-accordioncontent>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane2">
+                    <wm-accordionheader name="accordionheader2"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent2"></wm-accordioncontent>
+                </wm-accordionpane>
+                <wm-accordionpane name="accordionpane3">
+                    <wm-accordionheader name="accordionheader3"></wm-accordionheader>
+                    <wm-accordioncontent name="accordioncontent3"></wm-accordioncontent>
+                </wm-accordionpane>
+            </wm-accordion>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
-    <wm-footer name="footer" content="footer"></wm-footer>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>
 </script>

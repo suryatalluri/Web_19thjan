@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:p="http://www.springframework.org/schema/p" xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <context:component-scan base-package="com.web_19thjan.test13uu798.controller,com.web_19thjan.test13uu798.service,com.web_19thjan.test13uu798.dao"/>
+    <bean class="com.wavemaker.runtime.data.spring.WMPropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>
+                    classpath:Test13uu798.properties
+                </value>
+            </list>
+        </property>
+        <property name="ignoreUnresolvablePlaceholders" value="true"/>
+    </bean>
+   <bean id="Test13uu798WMManagedDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close" depends-on="systemPropertyInitializer" lazy-init="true"
+                      p:driverClass="${Test13uu798.driverClass}"
+                      p:jdbcUrl="${Test13uu798.url}"
+                      p:user="${Test13uu798.username}"
+                      p:password="${Test13uu798.password}"
+                      p:maxPoolSize="4"
+                      p:minPoolSize="2"
+                      p:maxIdleTime="600"
+                      p:maxStatements="50"
+                      p:maxStatementsPerConnection="20"
+                      p:checkoutTimeout="10000"
+                      p:idleConnectionTestPeriod="300"
+                      p:unreturnedConnectionTimeout="300"
+                      p:debugUnreturnedConnectionStackTraces="true"
+                      p:acquireRetryAttempts="3"
+                      p:acquireRetryDelay="1000"
+                      p:contextClassLoaderSource="library"
+                      p:privilegeSpawnedThreads="true"
+                      />
+    
+    <bean id="Test13uu798SessionFactory" class="com.wavemaker.runtime.data.factory.TypeResolverSessionFactoryBean">
+        <property name="dataSource" ref="Test13uu798DataSource"/>
+        <property name="packagesToScan" value="com.web_19thjan.test13uu798"/>
+        <property name="mappingResources">
+            <list>
+                <value>
+                    Test13uu798-queries.hbm.xml
+                </value>
+            </list>
+        </property>
+        <property name="customTypes">
+            <array value-type="com.wavemaker.runtime.data.CustomType">
+                <ref bean="dateTimeCustomType"/>
+            </array>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">
+                    ${Test13uu798.dialect}
+                </prop>
+                <prop key="hibernate.show_sql">
+                    false
+                </prop>
+                <prop key="hibernate.globally_quoted_identifiers">
+                    false
+                </prop>
+                <prop key="hibernate.hbm2ddl.auto">
+                    ${Test13uu798.hbm2ddl}
+                </prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="Test13uu798TransactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="Test13uu798SessionFactory"/>
+    </bean>
+    <bean id="Test13uu798Template" class="org.springframework.orm.hibernate4.HibernateTemplate">
+        <property name="sessionFactory" ref="Test13uu798SessionFactory"/>
+    </bean>
+    <bean id="Test13uu798WMQueryExecutor" class="com.wavemaker.runtime.data.dao.query.WMQueryExecutorImpl">
+        <property name="template" ref="Test13uu798Template"/>
+    </bean>
+    <bean id="Test13uu798WMProcedureExecutor" class="com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutorImpl">
+        <property name="template" ref="Test13uu798Template"/>
+        <property name="serviceId" value="Test13uu798" />
+    </bean>
+
+    <bean id="persistentLocalDateTimeType" class="com.wavemaker.studio.common.data.type.WMPersistentLocalDateTime"/>
+    <bean id="dateTimeCustomType" class="com.wavemaker.runtime.data.CustomType">
+        <property name="type" ref="persistentLocalDateTimeType"/>
+        <property name="keys">
+            <list>
+                <value>DateTime</value>
+                <value>org.joda.time.LocalDateTime</value>
+            </list>
+        </property>
+    </bean>
+    <bean id="Test13uu798PageableHandlerMethodResolver" class="com.wavemaker.runtime.resolver.WMPageableHandlerMethodArgumentResolver" >
+        <property name="pageParameterName" value="page"/>
+        <property name="sizeParameterName" value="size"/>
+        <property name="oneIndexedParameters" value="true"/>
+        <property name="maxPageSize" value="${Test13uu798.maxPageSize}"/>
+        <property name="fallbackPageable">
+         <bean  class="org.springframework.data.domain.PageRequest">
+            <constructor-arg  value="0"/>
+            <constructor-arg  value="20"/>
+         </bean>
+         </property>
+    </bean>
+
+    <bean id="Test13uu798DataSource" class="com.wavemaker.runtime.data.datasource.WMDataSource">
+           <property name="dataSourceType" value="${Test13uu798.dataSourceType}"/>
+           <property name="jndiName" value="${Test13uu798.jndiName}"/>
+           <property name="serviceId" value="Test13uu798"/>
+    </bean>
+
+
+    <tx:annotation-driven/>
+
+</beans>
+

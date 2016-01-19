@@ -1,0 +1,238 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger API documentation for Calculator",
+    "version" : "2.0",
+    "title" : "CalculatorService Swagger Documentation",
+    "x-WM-SERVICE_TYPE" : "SoapService",
+    "x-WM-SERVICE_ID" : "Calculator"
+  },
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "CalculatorController",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.web_19thjan.services.calculator.controller.CalculatorController",
+    "x-WM-VERSION" : ""
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/calculator/add" : {
+      "post" : {
+        "tags" : [ "CalculatorController" ],
+        "operationId" : "add",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Add",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Add",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.web_19thjan.services.calculator.Add",
+          "x-WM-UUID" : "d02d77d5-bcf9-4746-a5ca-b5f8ebea3c9f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/AddResponse",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "dd1a9ad8-9a7b-4079-88e9-093140199fe8",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "add-1-1435021263"
+      },
+      "x-WM-TAG" : "CalculatorController",
+      "x-WM-BASE_PATH" : "/calculator",
+      "x-WM-COMPLETE_PATH" : "//calculator/add",
+      "x-WM-RELATIVE_PATH" : "/add"
+    },
+    "/calculator/divide" : {
+      "get" : {
+        "tags" : [ "CalculatorController" ],
+        "operationId" : "divide",
+        "parameters" : [ {
+          "name" : "intA",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "d15bdc58-a93c-40b7-918c-8dc49cbc4434",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "intB",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "05e6ff73-dc32-4701-b244-c3f6ecc2a368",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/DivideResponse",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7f082cb9-937b-4c5d-9269-bd0bffe7150a",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "divide-2-3991651"
+      },
+      "x-WM-TAG" : "CalculatorController",
+      "x-WM-BASE_PATH" : "/calculator",
+      "x-WM-COMPLETE_PATH" : "//calculator/divide",
+      "x-WM-RELATIVE_PATH" : "/divide"
+    },
+    "/calculator/multiply" : {
+      "get" : {
+        "tags" : [ "CalculatorController" ],
+        "operationId" : "multiply",
+        "parameters" : [ {
+          "name" : "intA",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "b8ec5f89-1bbe-4d8f-9781-f4e3c85d30db",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "intB",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "175ec058-7b04-48f2-8203-f8921512237d",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/MultiplyResponse",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "6bc8d856-1589-4bf8-9821-21bd9b7fffc0",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "multiply-2-3991651"
+      },
+      "x-WM-TAG" : "CalculatorController",
+      "x-WM-BASE_PATH" : "/calculator",
+      "x-WM-COMPLETE_PATH" : "//calculator/multiply",
+      "x-WM-RELATIVE_PATH" : "/multiply"
+    },
+    "/calculator/subtract" : {
+      "get" : {
+        "tags" : [ "CalculatorController" ],
+        "operationId" : "subtract",
+        "parameters" : [ {
+          "name" : "intA",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "b98cfc0c-9d87-42b1-b20d-12382deabd05",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "intB",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "int",
+          "x-WM-UUID" : "b430c280-b20b-481a-8d01-64fbbc04c46d",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/SubtractResponse",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "4188e3b5-51af-4d5e-bdef-14675b3667ab",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "subtract-2-3991651"
+      },
+      "x-WM-TAG" : "CalculatorController",
+      "x-WM-BASE_PATH" : "/calculator",
+      "x-WM-COMPLETE_PATH" : "//calculator/subtract",
+      "x-WM-RELATIVE_PATH" : "/subtract"
+    }
+  },
+  "definitions" : {
+    "SubtractResponse" : {
+      "properties" : {
+        "subtractResult" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.web_19thjan.services.calculator.SubtractResponse",
+      "x-WM-TAGS" : [ "CalculatorController" ]
+    },
+    "DivideResponse" : {
+      "properties" : {
+        "divideResult" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.web_19thjan.services.calculator.DivideResponse",
+      "x-WM-TAGS" : [ "CalculatorController" ]
+    },
+    "MultiplyResponse" : {
+      "properties" : {
+        "multiplyResult" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.web_19thjan.services.calculator.MultiplyResponse",
+      "x-WM-TAGS" : [ "CalculatorController" ]
+    },
+    "Add" : {
+      "properties" : {
+        "intA" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "intB" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.web_19thjan.services.calculator.Add",
+      "x-WM-TAGS" : [ "CalculatorController" ]
+    },
+    "AddResponse" : {
+      "properties" : {
+        "addResult" : {
+          "type" : "integer",
+          "format" : "int32"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.web_19thjan.services.calculator.AddResponse",
+      "x-WM-TAGS" : [ "CalculatorController" ]
+    }
+  }
+}

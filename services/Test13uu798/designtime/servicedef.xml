@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="Test13uu798" type="DataService" springFile="Test13uu798.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.web_19thjan.test13uu798.Table1">
+            <element name="id" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="column2" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+    </dataobjects>
+</service>

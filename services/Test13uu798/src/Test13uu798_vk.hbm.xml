@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.web_19thjan.test13uu798">
+  <class table="`TABLE1`" name="com.web_19thjan.test13uu798.Table1" entity-name="com.web_19thjan.test13uu798.Table1">
+    <id name="id" type="integer">
+      <column name="`ID`" length="255" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="column2" type="timestamp">
+      <column name="`COLUMN2`" length="19" not-null="true" precision="19"/>
+    </property>
+  </class>
+</hibernate-mapping>

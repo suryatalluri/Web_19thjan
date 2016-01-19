@@ -1,4 +1,278 @@
 {
+  "CalculatorAdd" : {
+    "_id" : "wm-CalculatorAdd-wm.ServiceVariable-1453188016323",
+    "name" : "CalculatorAdd",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "com.web_19thjan.services.calculator.AddResponse",
+    "service" : "Calculator",
+    "operation" : "add",
+    "serviceType" : "SoapService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/calculator/add",
+      "httpMethod" : "post",
+      "name" : "add",
+      "parameters" : [ {
+        "name" : "Add",
+        "parameterType" : "body"
+      } ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "CalculatorDivide" : {
+    "_id" : "wm-CalculatorDivide-wm.ServiceVariable-1453188016325",
+    "name" : "CalculatorDivide",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "com.web_19thjan.services.calculator.DivideResponse",
+    "service" : "Calculator",
+    "operation" : "divide",
+    "serviceType" : "SoapService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/calculator/divide",
+      "httpMethod" : "get",
+      "name" : "divide",
+      "parameters" : [ {
+        "name" : "intA",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "intB",
+        "parameterType" : "query",
+        "type" : "integer"
+      } ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "CalculatorMultiply" : {
+    "_id" : "wm-CalculatorMultiply-wm.ServiceVariable-1453188016325",
+    "name" : "CalculatorMultiply",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "com.web_19thjan.services.calculator.MultiplyResponse",
+    "service" : "Calculator",
+    "operation" : "multiply",
+    "serviceType" : "SoapService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/calculator/multiply",
+      "httpMethod" : "get",
+      "name" : "multiply",
+      "parameters" : [ {
+        "name" : "intA",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "intB",
+        "parameterType" : "query",
+        "type" : "integer"
+      } ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "CalculatorSubtract" : {
+    "_id" : "wm-CalculatorSubtract-wm.ServiceVariable-1453188016325",
+    "name" : "CalculatorSubtract",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "com.web_19thjan.services.calculator.SubtractResponse",
+    "service" : "Calculator",
+    "operation" : "subtract",
+    "serviceType" : "SoapService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/calculator/subtract",
+      "httpMethod" : "get",
+      "name" : "subtract",
+      "parameters" : [ {
+        "name" : "intA",
+        "parameterType" : "query",
+        "type" : "integer"
+      }, {
+        "name" : "intB",
+        "parameterType" : "query",
+        "type" : "integer"
+      } ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "FeedServiceGetFeed" : {
+    "_id" : "wm-FeedServiceGetFeed-wm.ServiceVariable-1453187962505",
+    "name" : "FeedServiceGetFeed",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "com.wavemaker.runtime.feed.model.Feed",
+    "service" : "FeedService",
+    "operation" : "getFeed",
+    "serviceType" : "FeedService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/feed",
+      "httpMethod" : "get",
+      "name" : "getFeed",
+      "parameters" : [ {
+        "name" : "feedURL",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "FeedServiceGetFeedWithHttpConfig" : {
+    "_id" : "wm-FeedServiceGetFeedWithHttpConfig-wm.ServiceVariable-1453187962507",
+    "name" : "FeedServiceGetFeedWithHttpConfig",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "com.wavemaker.runtime.feed.model.Feed",
+    "service" : "FeedService",
+    "operation" : "getFeedWithHttpConfig",
+    "serviceType" : "FeedService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/feed/auth",
+      "httpMethod" : "get",
+      "name" : "getFeedWithHttpConfig",
+      "parameters" : [ {
+        "name" : "feedURL",
+        "parameterType" : "query",
+        "type" : "string"
+      }, {
+        "name" : "httpBasicAuthUsername",
+        "parameterType" : "query",
+        "type" : "string"
+      }, {
+        "name" : "httpBasicAuthPassword",
+        "parameterType" : "query",
+        "type" : "string"
+      }, {
+        "name" : "connectionTimeout",
+        "parameterType" : "query",
+        "type" : "integer"
+      } ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "GoogleapisInvoke" : {
+    "_id" : "wm-GoogleapisInvoke-wm.ServiceVariable-1453187949365",
+    "name" : "GoogleapisInvoke",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "googleapis.DirectionsResponse",
+    "service" : "googleapis",
+    "operation" : "invoke",
+    "serviceType" : "RestService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/googleapis/invoke",
+      "httpMethod" : "get",
+      "name" : "invoke",
+      "consumes" : [ "text/xml" ],
+      "parameters" : [ {
+        "name" : "sensor",
+        "parameterType" : "query",
+        "type" : "string"
+      }, {
+        "name" : "origin",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataBinding" : [ {
+      "target" : "origin",
+      "value" : "Toronto",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "sensor",
+      "value" : "false",
+      "type" : "java.lang.String"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -6,6 +280,97 @@
     "category" : "wm.NavigationVariable",
     "operation" : "gotoPage",
     "pageName" : "Main"
+  },
+  "navigationVariable1" : {
+    "_id" : "wm-navigationVariable1-wm.NavigationVariable-1453188391000",
+    "name" : "navigationVariable1",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "type" : "list",
+      "value" : "Main"
+    } ],
+    "operation" : "gotoAccordion",
+    "pageTransitions" : "none"
+  },
+  "RandomuserInvoke" : {
+    "_id" : "wm-RandomuserInvoke-wm.ServiceVariable-1453188135246",
+    "name" : "RandomuserInvoke",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "randomuser.RootResponse",
+    "service" : "randomuser",
+    "operation" : "invoke",
+    "serviceType" : "RestService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/randomuser/invoke",
+      "httpMethod" : "get",
+      "name" : "invoke",
+      "consumes" : [ "text/xml" ],
+      "parameters" : [ ]
+    },
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
+  },
+  "RechtspraakInvoke" : {
+    "_id" : "wm-RechtspraakInvoke-wm.ServiceVariable-1453188098151",
+    "name" : "RechtspraakInvoke",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "type" : "rechtspraak.feed",
+    "service" : "rechtspraak",
+    "operation" : "invoke",
+    "serviceType" : "RestService",
+    "wmServiceOperationInfo" : {
+      "relativePath" : "/rechtspraak/invoke",
+      "httpMethod" : "get",
+      "name" : "invoke",
+      "consumes" : [ "text/xml" ],
+      "parameters" : [ {
+        "name" : "date",
+        "parameterType" : "query",
+        "type" : "string"
+      }, {
+        "name" : "type",
+        "parameterType" : "query",
+        "type" : "string"
+      } ]
+    },
+    "dataBinding" : [ {
+      "target" : "type",
+      "value" : "uitspraak",
+      "type" : "java.lang.String"
+    }, {
+      "target" : "date",
+      "value" : [ "2011-05-01", "2011-05-30" ],
+      "type" : "java.lang.String"
+    } ],
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "isList" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",
@@ -18,5 +383,65 @@
     "type" : "string",
     "isList" : false,
     "saveInPhonegap" : false
+  },
+  "Test13uu798Table1Data" : {
+    "_id" : "wm-Test13uu798Table1Data-wm.LiveVariable-1453186597014",
+    "name" : "Test13uu798Table1Data",
+    "owner" : "App",
+    "category" : "wm.LiveVariable",
+    "operation" : "read",
+    "dataSet" : {
+      "dataValue" : ""
+    },
+    "dataBinding" : [ ],
+    "type" : "Table1",
+    "isList" : true,
+    "saveInPhonegap" : false,
+    "firstRow" : 0,
+    "maxResults" : 20,
+    "designMaxResults" : 10,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "liveSource" : "Test13uu798",
+    "ignoreCase" : false,
+    "matchMode" : "start",
+    "propertiesMap" : {
+      "columns" : [ {
+        "fieldName" : "id",
+        "type" : "integer",
+        "hibernateType" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "ID",
+        "isPrimaryKey" : true,
+        "notNull" : true,
+        "length" : 255,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false
+      }, {
+        "fieldName" : "column2",
+        "type" : "timestamp",
+        "hibernateType" : "timestamp",
+        "fullyQualifiedType" : "timestamp",
+        "columnName" : "COLUMN2",
+        "isPrimaryKey" : false,
+        "notNull" : true,
+        "length" : 19,
+        "precision" : 19,
+        "generator" : "assigned",
+        "isRelated" : false
+      } ],
+      "entityName" : "Table1",
+      "fullyQualifiedName" : "com.web_19thjan.test13uu798.Table1",
+      "tableType" : "TABLE",
+      "primaryFields" : [ "id" ]
+    },
+    "isDefault" : true,
+    "tableName" : "TABLE1",
+    "tableType" : "TABLE",
+    "dbSystem" : "MySQL",
+    "package" : "com.web_19thjan.test13uu798.Table1"
   }
 }
